@@ -8,10 +8,12 @@ const getMessageApiUrl = ({ token, chatId, message }) =>
 
 export const sendMessage = async (chatId, message) => {
   try {
-    const url = getMessageApiUrl({ token: TOKEN, chatId, message });
-    const result = await axios.get(url);
-    setLog(LOG_NORMAL, JSON.stringify(result));
+    const url = getMessageApiUrl({ token: TOKEN, chatId, message: encodeURI(message) });
+    const { data } = await axios.get(url);
+    data && (await setLog(LOG_NORMAL, data));
+    return data;
   } catch (error) {
+    console.error(error);
     setLog(LOG_ERROR, error);
   }
 };
