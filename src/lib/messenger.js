@@ -1,3 +1,4 @@
+require('dotenv').config();
 import axios from 'axios';
 import { LOG_ERROR, LOG_NORMAL, setLog } from './logger';
 
@@ -13,7 +14,7 @@ export const sendMessage = async (chatId, message) => {
     data && (await setLog(LOG_NORMAL, data));
     return data;
   } catch (error) {
-    console.error(error);
+    console.error(TOKEN, chatId);
     setLog(LOG_ERROR, error);
   }
 };
