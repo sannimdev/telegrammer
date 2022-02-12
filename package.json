@@ -1,0 +1,27 @@
+{
+  "name": "telegrammer",
+  "version": "0.0.1",
+  "description": "Telegrammer for Telegram API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src --out-dir build",
+    "dev": "./node_modules/.bin/babel-node src"
+  },
+  "author": "sannimdev",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/cli": "^7.17.0",
+    "@babel/runtime": "^7.17.0",
+    "axios": "^0.25.0",
+    "dotenv": "^16.0.0",
+    "ip": "^1.1.5",
+    "log-to-file": "^3.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.12",
+    "@babel/node": "^7.16.8",
+    "@babel/plugin-transform-runtime": "^7.17.0",
+    "@babel/preset-env": "^7.16.11"
+  }
+}
